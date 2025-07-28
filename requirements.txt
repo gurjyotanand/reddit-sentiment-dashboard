@@ -1,0 +1,8 @@
+streamlit
+pandas
+praw
+reticker
+vaderSentiment
+schedule
+python-dotenv
+requests
