@@ -15,7 +15,6 @@ services:
     volumes:
       - ./data:/app/data
       - ./logs:/app/logs
-      - ./tickers.json:/app/tickers.json:ro
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]

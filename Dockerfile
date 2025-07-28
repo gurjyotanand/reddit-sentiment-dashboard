@@ -14,8 +14,13 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application files
-COPY . .
+# Copy application files including tickers.json
+COPY app.py reddit_pipeline.py scheduler.py ./
+COPY tickers.json ./
+COPY start.sh ./
+
+# Copy streamlit config if it exists
+COPY .streamlit/ ./.streamlit/ 2>/dev/null || true
 
 # Create necessary directories
 RUN mkdir -p logs data
