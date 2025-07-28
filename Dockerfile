@@ -19,8 +19,8 @@ COPY app.py reddit_pipeline.py scheduler.py ./
 COPY tickers.json ./
 COPY start.sh ./
 
-# Copy streamlit config if it exists
-COPY .streamlit/ ./.streamlit/ 2>/dev/null || true
+# Copy streamlit config (optional)
+COPY .streamlit .streamlit
 
 # Create necessary directories
 RUN mkdir -p logs data
